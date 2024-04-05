@@ -7,5 +7,169 @@
     </head>
     <body>
         <h1>Hello! This is where my fitness app will be</h1>
+
+        <h2>TESTING DATA</h2>
+        <br>
+
+        <!-- Testing DateTime -->
+        <span>Today is {{today}}</span>
+        <br>
+        <span>Six months ago was {{six_months_ago}}</span>
+
+        <!-- Testing Latest Body Comp Data-->
+        <h3> Testing Latest Body Composition Data</h3>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Weight (lb)</th>
+                <th>Fat Mass (lb)</th>
+                <th>Bone Mass (lb)</th>
+                <th>Muscle Mass (lb)</th>
+                <th>Hydration (lb)</th>
+            </tr>
+            <tr style="text-align: center;">
+                <td>{{latest_body_composition.date}}</td>
+                <td>{{latest_body_composition.weight}}</td>
+                <td>{{latest_body_composition.fat_mass}}</td>
+                <td>{{latest_body_composition.bone_mass}}</td>
+                <td>{{latest_body_composition.muscle_mass}}</td>
+                <td>{{latest_body_composition.hydration}}</td>
+            </tr>
+        </table>
+        <br>
+
+        <!-- Testing Specific Month Body Comp Data-->
+        <h3> Testing January 2024 Body Composition Data </h3>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Weight (lb)</th>
+                <th>Fat Mass (lb)</th>
+                <th>Bone Mass (lb)</th>
+                <th>Muscle Mass (lb)</th>
+                <th>Hydration (lb)</th>
+            </tr>
+            
+            {% for entry in jan_body_composition %}
+                <tr style="text-align: center;">
+                    <td>{{entry.date}}</td>
+                    <td>{{entry.weight}}</td>
+                    {% if entry.fat_mass != None %}
+                        <td>{{entry.fat_mass}}</td>
+                        <td>{{entry.bone_mass}}</td>
+                        <td>{{entry.muscle_mass}}</td>
+                        <td>{{entry.hydration}}</td>
+                    {% else %}
+                        <td> - </td>
+                        <td> - </td>
+                        <td> - </td>
+                        <td> - </td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+
+        </table>
+        <br>
+
+        <!-- Testing Specific 6 Month Body Comp Data-->
+        <h3> Testing Past 6 Months Body Composition Data </h3>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Weight (lb)</th>
+                <th>Fat Mass (lb)</th>
+                <th>Bone Mass (lb)</th>
+                <th>Muscle Mass (lb)</th>
+                <th>Hydration (lb)</th>
+            </tr>
+            
+            {% for entry in six_month_body_composition %}
+                <tr style="text-align: center;">
+                    <td>{{entry.date}}</td>
+                    <td>{{entry.weight}}</td>
+                    {% if entry.fat_mass != None %}
+                        <td>{{entry.fat_mass}}</td>
+                        <td>{{entry.bone_mass}}</td>
+                        <td>{{entry.muscle_mass}}</td>
+                        <td>{{entry.hydration}}</td>
+                    {% else %}
+                        <td> - </td>
+                        <td> - </td>
+                        <td> - </td>
+                        <td> - </td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+
+        </table>
+        <br>
+
+        <!-- Testing Specific Month Body Comp Reverse Data-->
+        <h3> Testing January 2024 Body Composition Reverse Data </h3>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Weight (lb)</th>
+                <th>Fat Mass (lb)</th>
+                <th>Bone Mass (lb)</th>
+                <th>Muscle Mass (lb)</th>
+                <th>Hydration (lb)</th>
+            </tr>
+            
+            {% for entry in jan_reverse_body_composition %}
+                <tr style="text-align: center;">
+                    <td>{{entry.date}}</td>
+                    <td>{{entry.weight}}</td>
+                    {% if entry.fat_mass != None %}
+                        <td>{{entry.fat_mass}}</td>
+                        <td>{{entry.bone_mass}}</td>
+                        <td>{{entry.muscle_mass}}</td>
+                        <td>{{entry.hydration}}</td>
+                    {% else %}
+                        <td> - </td>
+                        <td> - </td>
+                        <td> - </td>
+                        <td> - </td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+
+        </table>
+        <br>
+        
+         <!-- Testing All Body Comp Data-->
+        <h3> Testing All Body Composition Data</h3>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Weight (lb)</th>
+                <th>Fat Mass (lb)</th>
+                <th>Bone Mass (lb)</th>
+                <th>Muscle Mass (lb)</th>
+                <th>Hydration (lb)</th>
+            </tr>
+
+            {% for entry in body_composition %}
+                <tr style="text-align: center;">
+                    <td>{{entry.date.date}}</td>
+                    <td>{{entry.weight}}</td>
+                    {% if entry.fat_mass != None %}
+                        <td>{{entry.fat_mass}}</td>
+                        <td>{{entry.bone_mass}}</td>
+                        <td>{{entry.muscle_mass}}</td>
+                        <td>{{entry.hydration}}</td>
+                    {% else %}
+                        <td> - </td>
+                        <td> - </td>
+                        <td> - </td>
+                        <td> - </td>
+                    {% endif %}
+                  
+                </tr>
+            {% endfor %}
+            
+        </table>
+
+        <h2> End Testing </h2>
     </body>
 </html>
