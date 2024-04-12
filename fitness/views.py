@@ -11,7 +11,7 @@ def home_view(request):
     #return HttpResponse("This is the home page of my future fitness web app")
 
     # Get all Body Composition Data
-    body_composition = BodyComposition.objects.all()
+    body_composition = BodyComposition.objects.all().order_by('date')
 
     # Get latest Body Composition Data
     latest_body_composition = BodyComposition.objects.latest('date')
