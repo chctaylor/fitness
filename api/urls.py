@@ -3,7 +3,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path("", views.getAllBodyCompData, name="getAllBodyComp_view"),
+    path("", views.apiOverview, name="apiOverview"),
     path("bodycomp/all", views.getAllBodyCompData, name="getAllBodyComp_view"),
     path("bodycomp/<str:pk>", views.getBodyCompData, name="getBodyComp_view"),
     path("bodycomp-add", views.addBodyCompData, name="addBodyComp_view"),

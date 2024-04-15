@@ -6,6 +6,18 @@ from .serializers import BodyCompositionSerializer
 
 
 @api_view(['GET'])
+def apiOverview(request):
+    api_urls = {
+        'All Body Comp Data': '/bodycomp/all',
+        'Single Body Comp Data': '/bodycomp/<str:pk>',
+        'Add Body Comp Data': '/bodycomp-add',
+        'Update Body Comp Data': '/bodycomp-update/<str:pk>',
+        'Delete Body Comp Data': '/bodycomp-delete/<str:pk>',
+    }
+
+    return Response(api_urls)
+
+@api_view(['GET'])
 def getAllBodyCompData(request):
     test = {
         '1': 'test 1',
