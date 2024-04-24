@@ -42,7 +42,7 @@ def addBodyCompData(request):
         serializer.save()
         return Response(serializer.data)
     
-@api_view(['POST'])
+@api_view(['PUT'])
 def updateBodyCompData(request, pk):
     body_comp = BodyComposition.objects.get(id=pk)
     serializer = BodyCompositionSerializer(instance=body_comp, data=request.data)
